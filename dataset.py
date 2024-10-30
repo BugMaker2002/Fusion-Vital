@@ -154,7 +154,7 @@ class FusionDataset(Dataset):
 
 class RGBData(Dataset):
     def __init__(self, datapath, video_list, recording_str="rgbd_rgb", ppg_str="rgbd",
-                 video_length = 900, frame_length = 64) -> None:
+                 video_length = 900, frame_length = 128) -> None:
         
         # There is an offset in capturing the signals w.r.t the ground truth.
         self.ppg_offset = 25

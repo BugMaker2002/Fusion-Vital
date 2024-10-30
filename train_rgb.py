@@ -49,7 +49,7 @@ def parseArgs():
     parser.add_argument('--viz', action='store_true', help="Visualize.")
 
     # Train args
-    parser.add_argument('--batch-size', type=int, default=8,
+    parser.add_argument('--batch-size', type=int, default=4,
                         help="Batch Size for the dataloaders.")
 
     parser.add_argument('--num-workers', type=int, default=2,
@@ -253,7 +253,7 @@ def main(args):
         img_size不是超参数, 固定为128
         time_length为超参数, 对应FusionDataset当中的frame_length参数, 两者必须保持一致
     """
-    model = RGBModel(frame_depth=4, img_size=128, time_length=64).to(args.device)
+    model = RGBModel(frame_depth=4, img_size=128, time_length=128).to(args.device)
     train_model(args, model, datasets)
 
 
